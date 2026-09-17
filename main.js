@@ -91,7 +91,7 @@
     }, 4000);
   }
 
-  /* Autoplay the fold animation when it scrolls into view — unless the viewer
+  /* Autoplay the fold animation when it scrolls into view, unless the viewer
      has asked for reduced motion, in which case leave it paused with controls. */
   function autoplayWatch() {
     var vids = document.querySelectorAll("video[data-autoplay]");

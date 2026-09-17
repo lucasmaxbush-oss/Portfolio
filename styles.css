@@ -1,11 +1,11 @@
 /* ==========================================================================
-   Lucas Bush — structural packaging portfolio
+   Lucas Bush, structural packaging portfolio
    Visual system: the drawing sheet.
    Cut lines are red, score lines are dashed teal, dimensions are monospaced.
    ========================================================================== */
 
 :root {
-  /* palette — light */
+  /* palette, light */
   --paper:      #f6f6f3;
   --paper-2:    #eceeea;
   --ink:        #16181b;
@@ -143,7 +143,7 @@ a:focus-visible, button:focus-visible {
   margin: 0 0 1.4rem;
 }
 
-/* the dimensioned name block — the page's one flourish */
+/* the dimensioned name block, the page's one flourish */
 .dimblock { position: relative; padding-left: 2.6rem; }
 .dimblock h1 {
   font-family: var(--display);
@@ -286,7 +286,7 @@ a:focus-visible, button:focus-visible {
 .prose p:last-child { margin-bottom: 0; }
 .prose strong { font-weight: 600; }
 
-/* spec table — the project's own titleblock */
+/* spec table, the project's own titleblock */
 .spec {
   font-family: var(--mono);
   font-size: 0.78rem;
