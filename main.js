@@ -83,18 +83,31 @@
   var ROUGHNESS = 0.40;
   var METALNESS = 0.10;
 
+  function applyFinish(mv, tries) {
+    var model = mv.model;
+    if (!model || !model.materials) {
+      if ((tries || 0) < 5) setTimeout(function () { applyFinish(mv, (tries || 0) + 1); }, 300);
+      return;
+    }
+    model.materials.forEach(function (m) {
+      /* A material can report loaded=false right after the load event, and
+         setting a factor on one of those throws. ensureLoaded settles it. */
+      var ready = m.ensureLoaded ? m.ensureLoaded() : Promise.resolve();
+      Promise.resolve(ready).then(function () {
+        try {
+          m.pbrMetallicRoughness.setRoughnessFactor(ROUGHNESS);
+          m.pbrMetallicRoughness.setMetallicFactor(METALNESS);
+        } catch (e) { /* older build, leave the model as authored */ }
+      }, function () { /* same */ });
+    });
+  }
+
   function tuneMaterials() {
     Array.prototype.forEach.call(
       document.querySelectorAll("model-viewer"),
       function (mv) {
-        mv.addEventListener("load", function () {
-          try {
-            (mv.model ? mv.model.materials : []).forEach(function (m) {
-              m.pbrMetallicRoughness.setRoughnessFactor(ROUGHNESS);
-              m.pbrMetallicRoughness.setMetallicFactor(METALNESS);
-            });
-          } catch (e) { /* older build, leave the model as authored */ }
-        });
+        mv.addEventListener("load", function () { applyFinish(mv); });
+        if (mv.loaded) applyFinish(mv);
       }
     );
   }
