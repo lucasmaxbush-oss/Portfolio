@@ -78,15 +78,18 @@
 
   /* If <model-viewer> never upgrades (script blocked, no WebGL), say so plainly. */
   function viewerWatch() {
-    var mv = document.querySelector("model-viewer");
+    var mvs = document.querySelectorAll("model-viewer");
     var fb = document.querySelector(".viewer__fallback");
-    if (!mv || !fb) return;
+    if (!mvs.length || !fb) return;
     setTimeout(function () {
       if (!window.customElements || !customElements.get("model-viewer")) {
-        mv.hidden = true;
+        Array.prototype.forEach.call(mvs, function (mv) {
+          var box = mv.closest(".viewer");
+          if (box) box.hidden = true;
+        });
         fb.hidden = false;
         fb.textContent =
-          "The 3D viewer could not load in this browser. The STEP file is linked below.";
+          "The 3D viewers could not load in this browser. The STEP files are linked below.";
       }
     }, 4000);
   }

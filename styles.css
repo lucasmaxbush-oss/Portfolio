@@ -739,3 +739,38 @@ footer.foot {
   margin: 1rem 0 0;
 }
 .credit cite { font-style: italic; }
+
+/* ---------- ideation strip: two wrapped rows, no horizontal scroll ---------- */
+
+.steps__track--wrap {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  overflow-x: visible;
+}
+@media (max-width: 900px) {
+  .steps__track--wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .steps__track--wrap { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ---------- grid of 3D viewers ---------- */
+
+.viewer-grid {
+  margin-top: clamp(1.6rem, 4vw, 2.6rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+@media (max-width: 760px) {
+  .viewer-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.viewer-grid .viewer { margin-top: 0; }
+.viewer-grid model-viewer { height: clamp(260px, 32vw, 380px); }
+
+.viewer__note {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--graphite);
+  margin: 0.9rem 0 0;
+  max-width: 62ch;
+}

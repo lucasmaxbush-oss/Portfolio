@@ -326,7 +326,7 @@
 
     <div class="steps">
       <p class="steps__label">Where it started, sketches and the concepts that lost</p>
-      <div class="steps__track" style="grid-template-columns: repeat(12, minmax(96px, 1fr));">
+      <div class="steps__track steps__track--wrap">
         <button class="step" type="button" data-full="img/capstone-ideation/sketch-01.png" data-cap="Early sketch, mug laid down in a tray"><img src="img/capstone-ideation/t/sketch-01.png" alt="Hand sketch of a mug in a tray" loading="lazy"><span>Sketch</span></button>
         <button class="step" type="button" data-full="img/capstone-ideation/sketch-02.png" data-cap="Early sketch, sleeve with captured handle"><img src="img/capstone-ideation/t/sketch-02.png" alt="Hand sketch of a sleeve concept" loading="lazy"><span>Sketch</span></button>
         <button class="step" type="button" data-full="img/capstone-ideation/sketch-03.png" data-cap="Early sketch, clamping feet under the mug base"><img src="img/capstone-ideation/t/sketch-03.png" alt="Hand sketch of clamping feet" loading="lazy"><span>Sketch</span></button>
@@ -506,9 +506,9 @@
           anyone can spin them without a CAD seat.
         </p>
         <p>
-          Spin the phone holder below. It is the actual STEP geometry, converted for
-          the browser. The rest are linked as 3D PDFs, which open interactively in
-          Adobe Acrobat.
+          Every model below is live. Drag one to rotate it, scroll to zoom. The
+          STEP files are linked underneath if you would rather open the geometry in
+          your own CAD package.
         </p>
       </div>
 
@@ -519,43 +519,63 @@
       </div>
     </div>
 
-    <div class="viewer">
-      <div class="viewer__bar">
-        <span><b>Interactive</b> Phone holder, drag to rotate and scroll to zoom</span>
-        <span>83.8 × 158.8 × 19.1 mm</span>
+    <div class="viewer-grid">
+
+      <div class="viewer">
+        <div class="viewer__bar">
+          <span><b>Fire hydrant</b> Assembly</span>
+          <span>107.6 × 175.9 × 102.9 mm</span>
+        </div>
+        <model-viewer src="models/fire-hydrant.glb" poster="img/cad/t/03-fire-hydrant-cad.png"
+          alt="Interactive 3D model of a fire hydrant assembly"
+          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-orbit="35deg 72deg auto"></model-viewer>
       </div>
-      <model-viewer
-        src="models/phone-holder.glb"
-        alt="Interactive 3D model of a phone holder"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="0.7"
-        exposure="1.0"
-        camera-orbit="35deg 72deg auto">
-      </model-viewer>
-      <p class="viewer__fallback" hidden></p>
+
+      <div class="viewer">
+        <div class="viewer__bar">
+          <span><b>Cologne bottle</b> Section view</span>
+          <span>50.8 × 152.4 × 38.1 mm</span>
+        </div>
+        <model-viewer src="models/cologne-bottle.glb" poster="img/cad/t/02-cologne-bottle-cad.png"
+          alt="Interactive 3D model of a cologne bottle and cap, sectioned"
+          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-orbit="35deg 72deg auto"></model-viewer>
+      </div>
+
+      <div class="viewer">
+        <div class="viewer__bar">
+          <span><b>Razor stand</b></span>
+          <span>25.4 × 22.9 × 88.6 mm</span>
+        </div>
+        <model-viewer src="models/razor-stand.glb" poster="img/cad/t/04-razor-stand-cad.png"
+          alt="Interactive 3D model of a razor stand"
+          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-orbit="35deg 72deg auto"></model-viewer>
+      </div>
+
+      <div class="viewer">
+        <div class="viewer__bar">
+          <span><b>Phone holder</b></span>
+          <span>83.8 × 158.7 × 19.1 mm</span>
+        </div>
+        <model-viewer src="models/phone-holder.glb"
+          alt="Interactive 3D model of a phone holder"
+          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-orbit="35deg 72deg auto"></model-viewer>
+      </div>
+
     </div>
 
-    <div class="figs figs--3">
-      <button class="fig fig--contain fig--tall" type="button" data-full="img/cad/02-cologne-bottle-cad.png" data-cap="Cologne bottle, modelled in SolidWorks with the cap lifted clear of the body">
-        <img src="img/cad/t/02-cologne-bottle-cad.png" alt="CAD model of a cologne bottle with its cap above it" loading="lazy">
-        <figcaption><b>01</b> Cologne bottle</figcaption>
-      </button>
-      <button class="fig fig--contain fig--tall" type="button" data-full="img/cad/03-fire-hydrant-cad.png" data-cap="Fire hydrant assembly, modelled in SolidWorks">
-        <img src="img/cad/t/03-fire-hydrant-cad.png" alt="CAD model of a fire hydrant" loading="lazy">
-        <figcaption><b>02</b> Fire hydrant assembly</figcaption>
-      </button>
-      <button class="fig fig--contain fig--tall" type="button" data-full="img/cad/04-razor-stand-cad.png" data-cap="Razor stand, modelled in SolidWorks">
-        <img src="img/cad/t/04-razor-stand-cad.png" alt="CAD model of a razor stand" loading="lazy">
-        <figcaption><b>03</b> Razor stand</figcaption>
-      </button>
-    </div>
+    <p class="viewer__note">Drag to rotate, scroll to zoom. Every model is the
+      original SolidWorks geometry, converted for the browser.</p>
+    <p class="viewer__fallback" hidden></p>
 
     <ul class="dl">
+      <li><a href="files/fire-hydrant-assembly.step" target="_blank" rel="noopener">Fire hydrant assembly <em>STEP</em></a></li>
+      <li><a href="files/cologne-bottle-assembly.step" target="_blank" rel="noopener">Cologne bottle assembly, section view <em>STEP</em></a></li>
+      <li><a href="files/razor-stand.step" target="_blank" rel="noopener">Razor stand <em>STEP</em></a></li>
       <li><a href="files/phone-holder.step" target="_blank" rel="noopener">Phone holder <em>STEP</em></a></li>
-      <li><a href="files/cologne-bottle-assembly-3d.pdf" target="_blank" rel="noopener">Cologne bottle assembly, section view <em>3D PDF · Acrobat</em></a></li>
-      <li><a href="files/fire-hydrant-assembly-3d.pdf" target="_blank" rel="noopener">Fire hydrant assembly <em>3D PDF · Acrobat</em></a></li>
-      <li><a href="files/razor-stand-3d.pdf" target="_blank" rel="noopener">Razor stand <em>3D PDF · Acrobat</em></a></li>
     </ul>
   </section>
 
