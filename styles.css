@@ -796,16 +796,25 @@ footer.foot {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  text-underline-offset: 0.3em;
+  text-decoration-color: transparent;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 .steps--quiet > summary::-webkit-details-marker { display: none; }
 .steps--quiet > summary::before {
-  content: "+";
+  content: "\25B8";
   color: var(--cut);
   font-size: 0.9rem;
   line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
-.steps--quiet[open] > summary::before { content: "\2212"; }
-.steps--quiet > summary:hover { color: var(--ink); }
+.steps--quiet[open] > summary::before { transform: rotate(90deg); }
+.steps--quiet > summary:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--cut);
+}
 .steps--quiet > summary span {
   margin-left: auto;
   font-variant-numeric: tabular-nums;
