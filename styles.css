@@ -774,3 +774,49 @@ footer.foot {
   margin: 0.9rem 0 0;
   max-width: 62ch;
 }
+
+/* ---------- quiet, collapsible supporting strip ---------- */
+
+.steps--quiet {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: transparent;
+  padding: 0;
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+}
+.steps--quiet > summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--graphite);
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.steps--quiet > summary::-webkit-details-marker { display: none; }
+.steps--quiet > summary::before {
+  content: "+";
+  color: var(--cut);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.steps--quiet[open] > summary::before { content: "\2212"; }
+.steps--quiet > summary:hover { color: var(--ink); }
+.steps--quiet > summary span {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+.steps--quiet .steps__track { padding-bottom: 1rem; }
+.steps--quiet .step { border-color: color-mix(in srgb, var(--rule) 70%, transparent); }
+
+/* keep the drop-test video from towering over the images beside it */
+.vid--pair .vid video { max-height: 56vh; }
+
+/* Last figure in a 2-up fills the orphan cell instead of leaving a gap. */
+.fig--wide { grid-column: 1 / -1; }
+@media (max-width: 760px) { .fig--wide { grid-column: auto; } }

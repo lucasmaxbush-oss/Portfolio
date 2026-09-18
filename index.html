@@ -308,7 +308,7 @@
                controls playsinline preload="none"
                aria-label="Video of the package being dropped from a balcony"></video>
       </div>
-      <div class="figs figs--1" style="margin-top:0">
+      <div class="figs figs--2" style="margin-top:0">
         <button class="fig" type="button" data-full="img/capstone/16-context-a.jpg" data-cap="The challenge package before the drop">
           <img src="img/capstone/t/16-context-a.jpg" alt="Two students holding a large corrugated box" loading="lazy">
           <figcaption><b>09</b> Before the drop</figcaption>
@@ -317,15 +317,15 @@
           <img src="img/capstone/t/17-context-b.jpg" alt="Interior of a large box showing nested folded cones" loading="lazy">
           <figcaption><b>10</b> Nested cones, the crumple zone</figcaption>
         </button>
-        <button class="fig" type="button" data-full="img/capstone/19-internal-view.jpg" data-cap="Looking into the box, a nested cone bonded to the inner wall">
+        <button class="fig fig--wide" type="button" data-full="img/capstone/19-internal-view.jpg" data-cap="Looking into the box, a nested cone bonded to the inner wall">
           <img src="img/capstone/t/19-internal-view.jpg" alt="Interior view of the large box showing a cone attached to the wall" loading="lazy">
-          <figcaption><b>11</b> Internal view
+          <figcaption><b>11</b> Internal view</figcaption>
         </button>
       </div>
     </div>
 
-    <div class="steps">
-      <p class="steps__label">Where it started, sketches and the concepts that lost</p>
+    <details class="steps steps--quiet">
+      <summary>Where it started: sketches and the concepts that lost <span>12</span></summary>
       <div class="steps__track steps__track--wrap">
         <button class="step" type="button" data-full="img/capstone-ideation/sketch-01.png" data-cap="Early sketch, mug laid down in a tray"><img src="img/capstone-ideation/t/sketch-01.png" alt="Hand sketch of a mug in a tray" loading="lazy"><span>Sketch</span></button>
         <button class="step" type="button" data-full="img/capstone-ideation/sketch-02.png" data-cap="Early sketch, sleeve with captured handle"><img src="img/capstone-ideation/t/sketch-02.png" alt="Hand sketch of a sleeve concept" loading="lazy"><span>Sketch</span></button>
@@ -340,7 +340,7 @@
         <button class="step" type="button" data-full="img/capstone-ideation/concept-07-pulp-insert-iso.png" data-cap="Concept: molded pulp base insert compatible with both mug sizes"><img src="img/capstone-ideation/t/concept-07-pulp-insert-iso.png" alt="CAD concept of a molded pulp insert" loading="lazy"><span>Pulp</span></button>
         <button class="step" type="button" data-full="img/capstone-ideation/concept-20-wrap-band.png" data-cap="Concept: wrap band around the mug body"><img src="img/capstone-ideation/t/concept-20-wrap-band.png" alt="CAD concept of a wrap band" loading="lazy"><span>Band</span></button>
       </div>
-    </div>
+    </details>
   </section>
 
   <hr class="score-rule">
@@ -422,11 +422,23 @@
       </button>
     </div>
 
+    <div class="viewer" style="margin-top:clamp(1.6rem,4vw,2.6rem)">
+      <div class="viewer__bar">
+        <span><b>Cart insert</b> Drag to rotate, scroll to zoom</span>
+        <span>635 × 203 × 229 mm</span>
+      </div>
+      <model-viewer src="models/cart-insert.glb"
+        alt="Interactive 3D model of the cleaning cart insert"
+        camera-controls touch-action="pan-y" environment-image="neutral"
+        tone-mapping="commerce" shadow-intensity="1" shadow-softness="0.75" exposure="1.15"
+        camera-orbit="35deg 72deg auto"></model-viewer>
+    </div>
+
     <ul class="dl">
+      <li><a href="files/cart-insert.step" target="_blank" rel="noopener">Cart insert <em>STEP</em></a></li>
       <li><a href="files/cart-insert-dieline.pdf" target="_blank" rel="noopener">Cart insert dieline <em>PDF</em></a></li>
       <li><a href="files/cart-insert-tray-dieline.pdf" target="_blank" rel="noopener">Bottle tray dieline <em>PDF</em></a></li>
       <li><a href="files/sponge-hanger-dieline.pdf" target="_blank" rel="noopener">Sponge hanger dieline <em>PDF</em></a></li>
-      <li><a href="files/cleaning-cart-insert-3d.pdf" target="_blank" rel="noopener">Cleaning cart insert <em>3D PDF · Acrobat</em></a></li>
     </ul>
   </section>
 
@@ -528,7 +540,8 @@
         </div>
         <model-viewer src="models/fire-hydrant.glb" poster="img/cad/t/03-fire-hydrant-cad.png"
           alt="Interactive 3D model of a fire hydrant assembly"
-          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-controls touch-action="pan-y" environment-image="neutral"
+          tone-mapping="commerce" shadow-intensity="1" shadow-softness="0.75" exposure="1.15"
           camera-orbit="35deg 72deg auto"></model-viewer>
       </div>
 
@@ -539,7 +552,8 @@
         </div>
         <model-viewer src="models/cologne-bottle.glb" poster="img/cad/t/02-cologne-bottle-cad.png"
           alt="Interactive 3D model of a cologne bottle and cap, sectioned"
-          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-controls touch-action="pan-y" environment-image="neutral"
+          tone-mapping="commerce" shadow-intensity="1" shadow-softness="0.75" exposure="1.15"
           camera-orbit="35deg 72deg auto"></model-viewer>
       </div>
 
@@ -550,7 +564,8 @@
         </div>
         <model-viewer src="models/razor-stand.glb" poster="img/cad/t/04-razor-stand-cad.png"
           alt="Interactive 3D model of a razor stand"
-          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-controls touch-action="pan-y" environment-image="neutral"
+          tone-mapping="commerce" shadow-intensity="1" shadow-softness="0.75" exposure="1.15"
           camera-orbit="35deg 72deg auto"></model-viewer>
       </div>
 
@@ -561,7 +576,8 @@
         </div>
         <model-viewer src="models/phone-holder.glb"
           alt="Interactive 3D model of a phone holder"
-          camera-controls touch-action="pan-y" shadow-intensity="0.7" exposure="1.0"
+          camera-controls touch-action="pan-y" environment-image="neutral"
+          tone-mapping="commerce" shadow-intensity="1" shadow-softness="0.75" exposure="1.15"
           camera-orbit="35deg 72deg auto"></model-viewer>
       </div>
 

@@ -76,6 +76,29 @@
     else if (e.key === "ArrowLeft") { step(-1); }
   });
 
+  /* --- 3D look, tune these two numbers ---------------------------------
+     ROUGHNESS: lower = glossier, so highlights sweep across curves and show
+     contour. 1 is dead matte, 0 is mirror. 0.40 reads like moulded plastic.
+     METALNESS: a little makes edges catch light. Above ~0.3 it goes chrome. */
+  var ROUGHNESS = 0.40;
+  var METALNESS = 0.10;
+
+  function tuneMaterials() {
+    Array.prototype.forEach.call(
+      document.querySelectorAll("model-viewer"),
+      function (mv) {
+        mv.addEventListener("load", function () {
+          try {
+            (mv.model ? mv.model.materials : []).forEach(function (m) {
+              m.pbrMetallicRoughness.setRoughnessFactor(ROUGHNESS);
+              m.pbrMetallicRoughness.setMetallicFactor(METALNESS);
+            });
+          } catch (e) { /* older build, leave the model as authored */ }
+        });
+      }
+    );
+  }
+
   /* If <model-viewer> never upgrades (script blocked, no WebGL), say so plainly. */
   function viewerWatch() {
     var mvs = document.querySelectorAll("model-viewer");
@@ -121,6 +144,7 @@
   function init() {
     build();
     collect();
+    tuneMaterials();
     viewerWatch();
     autoplayWatch();
   }
