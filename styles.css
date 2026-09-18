@@ -792,13 +792,14 @@ footer.foot {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--graphite);
-  padding: 0.8rem 0;
+  padding: 0.7rem 1rem;
+  margin: 0.9rem 0;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  text-underline-offset: 0.3em;
-  text-decoration: underline dotted var(--rule);
-  transition: color 0.15s ease, text-decoration-color 0.15s ease, text-decoration-style 0.15s ease;
+  border: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--cut) 5%, transparent);
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
 .steps--quiet > summary::-webkit-details-marker { display: none; }
 .steps--quiet > summary::before {
@@ -812,8 +813,8 @@ footer.foot {
 .steps--quiet[open] > summary::before { transform: rotate(90deg); }
 .steps--quiet > summary:hover {
   color: var(--ink);
-  text-decoration-style: solid;
-  text-decoration-color: var(--cut);
+  border-color: var(--cut);
+  background: color-mix(in srgb, var(--cut) 12%, transparent);
 }
 .steps--quiet > summary span {
   margin-left: auto;
